@@ -1,0 +1,2 @@
+module TestWierdHelper
+end

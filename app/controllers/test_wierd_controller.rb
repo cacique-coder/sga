@@ -1,0 +1,2 @@
+class TestWierdController < ApplicationController
+end
