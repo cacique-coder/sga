@@ -1,0 +1,14 @@
+h1 Periodos Escolares
+table
+  - @school_periods.each do |school_period|
+    tr
+      td
+        a href="#{school_period_path(school_period)}"
+          = school_period
+      td
+        = render :partial => "action_items", locals: {school_period: school_period}
+
+  - if @school_periods.length == 0
+    tr
+      td
+        a href="#{new_school_period_path}" Cree un nuevo periodo escolar

@@ -1,0 +1,5 @@
+= semantic_form_for @school_period do |f|
+  = f.inputs  name: "Datos del periodo" do
+    = f.input :school_year , label: "Año escolar"
+  = f.actions do
+    = f.action :submit, label: "Crear el periodo escolar"
