@@ -1,0 +1,3 @@
+= semantic_form_for @kinship do |f|
+  = f.input :kinship , label: "Nombre del parentesco"
+  = f.action :submit, label: "#{@kinship.id.nil? ? "Crear" : "Actualizar"} parentesco"

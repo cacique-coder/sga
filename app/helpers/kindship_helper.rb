@@ -1,0 +1,2 @@
+module KindshipHelper
+end
