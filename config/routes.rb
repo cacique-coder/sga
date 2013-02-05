@@ -1,7 +1,12 @@
 Sga::Application.routes.draw do
-
-  resources :school_period
-
+  resources :school_periods
+  resources :students do
+    resources :medicine_students
+    resources :representative_students
+  end
+  resources :medicines
+  resources :representatives
+  resources :kinships
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130127212858) do
+ActiveRecord::Schema.define(:version => 20130204012825) do
 
   create_table "inscriptions", :force => true do |t|
     t.integer  "student_id"
@@ -78,6 +78,8 @@ ActiveRecord::Schema.define(:version => 20130127212858) do
     t.text     "observation"
     t.datetime "created_at",    :null => false
     t.datetime "updated_at",    :null => false
+    t.string   "last_name"
+    t.string   "first_name"
   end
 
   create_table "school_periods", :force => true do |t|
