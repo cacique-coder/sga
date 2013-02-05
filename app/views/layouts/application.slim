@@ -7,6 +7,10 @@ html
     = csrf_meta_tags
   body
     ul.menu
-      li
-        = link_to("alumnos",students_path)
+      li = link_to("Alumnos",students_path)
+      li = link_to("Representantes",representatives_path)
+      li = link_to("Medicinas",medicines_path)
+      li = link_to("Parentesco",kinships_path)
+      li = link_to("periodos escolares",school_periods_path)
+
     = yield
