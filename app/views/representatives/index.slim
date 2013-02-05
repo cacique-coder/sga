@@ -1,0 +1,15 @@
+h1 Todos los representantes
+table
+  - @representatives.each do |representative|
+    tr
+      td
+        =link_to(representative, representative_path(representative))
+      td
+        = render :partial => "action_items", locals: {representative: representative}
+
+  - if @representatives.length == 0
+    tr
+      td No tenemos representantes registrados (¿Y los alumnos no tienen quien los represente?)
+
+  tr
+    td = link_to('Nuevo Representante',new_representative_path)

@@ -1,0 +1,23 @@
+h1 Datos del representante
+h1 Representante
+table
+  tr
+    td Nombre 
+    td =@representative.first_name
+  tr
+    td Descripcion
+    td =@representative.last_name
+  tr
+    td Cédula
+    td =@representative.dni
+  tr
+    td Numero fijo
+    td =@representative.phone_number
+  tr
+    td Numero movil
+    td =@representative.mobile_number
+  tr
+    td Observaciones
+    td =@representative.observation
+div.actions
+  =button_to("Editar representante", edit_representative_path(@representative),:method=>:get)

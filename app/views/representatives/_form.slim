@@ -1,0 +1,10 @@
+= semantic_form_for @representative do |f|
+  = f.inputs  name: "Datos del representate" do
+    = f.input :first_name , label: "Nombres"
+    = f.input :last_name , label: "Apellidos"
+    = f.input :dni , label: "Cédula"
+    = f.input :mobile_number , label: "Número movil"
+    = f.input :phone_number , label: "Número de fijo"
+    = f.input :observation , label: "Observaciones", input_html:{rows:3}
+  = f.actions do
+    = f.action :submit, label: "#{@representative.id.nil? ? "Crear" : "Actualizar"} Representante"
