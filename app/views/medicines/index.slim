@@ -1,0 +1,15 @@
+h1 Todas las medicinas
+table
+  - @medicines.each do |medicine|
+    tr
+      td
+        =link_to(medicine, medicine_path(medicine))
+      td
+        = render :partial => "action_items", locals: {medicine: medicine}
+
+  - if @medicines.length == 0
+    tr
+      td No tenemos medicinas registradas
+
+  tr
+    td = link_to('Nueva medicina',new_medicine_path)

@@ -1,0 +1,4 @@
+= semantic_form_for @medicine do |f|
+  = f.input :name , label: "Nombre"
+  = f.input :description , label: "Descripción", input_html: {rows: 3}
+  = f.action :submit, label: "#{@medicine.id.nil? ? "Crear" : "Actualizar"} Medicina"

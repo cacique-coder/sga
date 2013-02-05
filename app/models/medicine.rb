@@ -3,4 +3,7 @@ class Medicine < ActiveRecord::Base
   has_many :medicine_student
   has_many :student, :through => :student
 
+  def to_s
+    name
+  end
 end

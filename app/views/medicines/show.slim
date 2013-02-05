@@ -1,0 +1,10 @@
+h1 Medicina
+table
+  tr
+    td Nombre del medicamento
+    td =@medicine.name
+  tr
+    td Descripcion
+    td =@medicine.description
+div.actions
+  =button_to("Editar medicina", edit_medicine_path(@medicine),:method=>:get)
