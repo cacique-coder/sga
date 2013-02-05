@@ -1,0 +1,15 @@
+h1 Todos los estudiantes
+table
+  - @students.each do |student|
+    tr
+      td
+        =link_to(student, student_path(student))
+      td
+        = render :partial => "action_items", locals: {student: student}
+
+  - if @students.length == 0
+    tr
+      td No tenemos estudiantes registrados (¿Y asi como inicamos clases?)
+
+  tr
+    td = link_to('Nuevo estudiante',new_student_path)

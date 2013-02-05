@@ -8,5 +8,12 @@ class Student < ActiveRecord::Base
   has_many :representatives, :through => :representative_students
 
   has_many :inscriptions
-  
+
+  def self.sex_aviable
+    [:Masculino,:Femenino]
+  end
+
+  def to_s
+    "#{last_name} #{first_name}"
+  end
 end

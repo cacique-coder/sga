@@ -1,0 +1,13 @@
+= semantic_form_for @student do |f|
+  = f.inputs  name: "Datos del estudiante" do
+    = f.input :first_name , label: "Nombres"
+    = f.input :last_name , label: "Apellidos"
+    = f.input :sex, collection: Student.sex_aviable, :as => :select
+    = f.input :dni , label: "Cédula"
+    = f.input :school_dni , label: "Cédula Escolar"
+    = f.input :birthdate , label: "Fecha de Nacimiento", input_html:{class:"datepicker"} , :as => :string, hint: "El formato debe ser 24/02/2010"
+    = f.input :birthplace , label: "Lugar de nacimiento", input_html:{rows:3}
+    = f.input :direction , label: "Dirección actual", input_html:{rows:3}
+    = f.input :phone_number , label: "Número de contacto", input_html:{rows:3}
+  = f.actions do
+    = f.action :submit, label: "#{@student.id.nil? ? "Crear" : "Actualizar"} Alumno"

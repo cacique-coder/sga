@@ -1,0 +1,58 @@
+h1 Datos del estudiante
+table
+  tr
+    td Apellidos
+    td =@student.last_name
+  tr
+    td Nombres del estudiante
+    td = @student.first_name
+  tr
+    td Cédula
+    td = @student.dni
+  tr
+    td Cédula Escolar
+    td = @student.school_dni
+  tr
+    td Fecha de nacimiento
+    td = @student.birthdate
+  tr
+    td Lugar de nacimiento
+    td = @student.birthplace
+  tr
+    td Direccion actual
+    td = @student.direction
+  tr
+    td Numeros de contacto
+    td = @student.phone_number
+h2 Representantes
+table
+
+  tr
+    td Nombre completo
+    td Parentesco
+    td ¿Puede Retirar?
+  - @student.representative_students.each do |representative|
+    tr
+     td = representative.name
+     td = representative.kinship
+     td = representative.seek_to_spanish
+
+  -if @student.representatives.length == 0
+    tr
+      td colspan="3" No tiene representantes registrados registrados
+div.actions = button_to("Agregar un nuevo representante",new_student_representative_student_path(@student),:method=>:get)
+
+
+h2 Medicinas
+table
+  - @student.medicines.each do |medicine|
+    tr
+     td Nombre del medicamento
+     td medicine.name
+  -if @student.medicines.length == 0
+    tr
+      td No tiene medicamentos registrados
+      td = button_to("Anexar medicamento",new_student_medicine_student_path(@student))
+
+div.actions
+  =button_to("Editar estudiante", edit_student_path(@student),:method=>:get)
