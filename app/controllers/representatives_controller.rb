@@ -1,5 +1,6 @@
 class RepresentativesController < ApplicationController
-  before_filter :get_representative, :only => [:show,:edit,:update,:destroy]
+  before_filter :get_student
+
 
   def index
     @representatives = Representative.all

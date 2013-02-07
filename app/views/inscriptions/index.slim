@@ -1,0 +1,12 @@
+h1 Inicio del proceso de inscripción
+h2 El periodo actual #{@school_period}
+br
+h3 Estudiantes no inscritos
+table
+  tr
+    td Nombre del estudiante
+    td 
+  -@students.each do |student|
+    tr
+      td =student 
+      td =link_to("Inscribir Alumno",new_student_inscriptions_path(student))
