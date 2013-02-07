@@ -1,9 +1,12 @@
 Sga::Application.routes.draw do
   resources :school_periods
-  resources :students do
+
+  resources :students, :shallow => true do
     resources :medicine_students
     resources :representative_students
+    resources :inscriptions
   end
+
   resources :medicines
   resources :representatives
   resources :kinships
