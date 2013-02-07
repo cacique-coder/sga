@@ -1,28 +1,40 @@
 h1 Datos del estudiante
 table
   tr
-    td Apellidos
+    td 
+      strong Apellidos
     td =@student.last_name
   tr
-    td Nombres del estudiante
+    td 
+      strong Nombres del estudiante
     td = @student.first_name
   tr
-    td Cédula
+    td 
+      strong Foto
+    td = image_tag @student.photo
+  tr
+    td 
+      strong Cédula
     td = @student.dni
   tr
-    td Cédula Escolar
+    td
+      strong  Cédula Escolar
     td = @student.school_dni
   tr
-    td Fecha de nacimiento
+    td 
+      strong Fecha de nacimiento
     td = @student.birthdate
   tr
-    td Lugar de nacimiento
+    td 
+      strong Lugar de nacimiento
     td = @student.birthplace
   tr
-    td Direccion actual
+    td 
+      strong Direccion actual
     td = @student.direction
   tr
-    td Numeros de contacto
+    td 
+      strong Numeros de contacto
     td = @student.phone_number
 h2 Representantes
 table
@@ -31,11 +43,13 @@ table
     td Nombre completo
     td Parentesco
     td ¿Puede Retirar?
+    td
   - @student.representative_students.each do |representative|
     tr
      td = representative.name
      td = representative.kinship
      td = representative.seek_to_spanish
+     td = button_to("Eliminar representante (solo relación)", representative_student_path(representative), :method => :delete)
 
   -if @student.representatives.length == 0
     tr
@@ -45,14 +59,20 @@ div.actions = button_to("Agregar un nuevo representante",new_student_representat
 
 h2 Medicinas
 table
-  - @student.medicines.each do |medicine|
+  tr
+    td Nombre del medicamento
+    td Descripcion
+    td
+  - @student.medicine_students.each do |medicine|
     tr
-     td Nombre del medicamento
-     td medicine.name
+      td = medicine.name
+      td = medicine.description
+      td = button_to("Eliminar medicina (solo relación)", medicine_student_path(medicine), :method => :delete)
+
   -if @student.medicines.length == 0
     tr
       td No tiene medicamentos registrados
-      td = button_to("Anexar medicamento",new_student_medicine_student_path(@student))
+      td = button_to("Anexar medicamento",new_student_medicine_student_path(@student),:method => :get)
 
 div.actions
   =button_to("Editar estudiante", edit_student_path(@student),:method=>:get)

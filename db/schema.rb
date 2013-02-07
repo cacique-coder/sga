@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130204012825) do
+ActiveRecord::Schema.define(:version => 20130207003824) do
 
   create_table "inscriptions", :force => true do |t|
     t.integer  "student_id"
@@ -98,8 +98,12 @@ ActiveRecord::Schema.define(:version => 20130204012825) do
     t.text     "direction"
     t.string   "phone_number"
     t.date     "birthdate"
-    t.datetime "created_at",   :null => false
-    t.datetime "updated_at",   :null => false
+    t.datetime "created_at",         :null => false
+    t.datetime "updated_at",         :null => false
+    t.string   "photo_file_name"
+    t.string   "photo_content_type"
+    t.integer  "photo_file_size"
+    t.datetime "photo_updated_at"
   end
 
 end
